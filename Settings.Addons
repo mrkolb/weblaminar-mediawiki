@@ -1,0 +1,4 @@
+wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'CollapsibleVector' );
+wfLoadExtension( 'MultiUpload' );
+wfLoadExtension( 'CategoryTree' );

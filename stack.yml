@@ -1,0 +1,24 @@
+# docker-entrypoint-initdb is mounted to db sub directory.  This auto calls any sh or sql scripts to run.
+version: '3.1'
+
+services:
+
+    db:
+        image: mariadb
+        environment: # replace credentials here
+            MYSQL_ROOT_PASSWORD: r00tpwd
+            MYSQL_DATABASE: mediawikidb
+            MYSQL_USER: wikiuser
+            MYSQL_PASSWORD: m3d1awiki
+        volumes:
+            - "./db:/docker-entrypoint-initdb.d"
+
+    adminer:
+        image: adminer
+        ports:
+            - "6080:8080"
+
+    mediawiki:
+      build: .
+      ports:
+            - "7000:80"
