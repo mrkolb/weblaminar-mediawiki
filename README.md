@@ -18,6 +18,9 @@ Uses NGINX instead of Apache for better performance and Alpine Linux for a small
   * DBhost = db
   * document all choices for future reference.
   * download LocalSettings.php from configuration.
+1. Bring down the stack ```docker-compose -f stack.yml down```
+1. List your container instances ```docker ps -a```
+1. Remove the mediawiki container ```docker rm container_id```
 1. Edit LocalSettings.php and add text from Settings.Addons to bottom of file.
 1. mv LocalSettings.php to conf directory
 1. mv Dockerfile Dockerfile.orig
